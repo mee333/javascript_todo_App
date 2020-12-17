@@ -2,35 +2,44 @@
 <html lang="ja">
 	<head>
 		<meta charset="utf-8">
-		<title>サイトタイトル</title>
+		<title>Todo App</title>
 		<meta name="description" content="サイトキャプションを入力">
 		<meta name="keywords" content="サイトキーワードを,で区切って入力">
-		<link rel="stylesheet" href="sample.css">
-		<!--[if lt IE 9]>
-		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-		<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
-		<![endif]-->
-		<script src="sample.js"></script>
+		<link rel="stylesheet" href="app.css">
+		
+		<script src="app.js"></script>
 	</head>
 
 	<body>
 		<!----- ヘッダー ----->
-		<header>ヘッダー</header>
-		<nav>ナビ</nav>
+		<header>Todo App</header>
+		<nav></nav>
 		<!----- ヘッダー END ----->
 		
 		<!----- メインコンテンツ ----->
-		<article>
-			<h1>タイトル</h1>
-			<section>
-				<h2>タイトル</h2>
-				<p>コンテンツの内容</p>
-			</section>
-		</article>
+    <h1></h1>
+    <section>
+      <h2></h2>
+      <p>Add ToDo Thing</p>
+      <form>
+        <input type="text" id="todoThings" name="todoThings">
+        <input type="button" onClick="click1()"　name="addButon" value="Add">
+      </form>
+    </section>
+    <div>
+      <ul id="contentsList">
+        <!-- <li>
+          <input type="checkbox" id="listDone" name="listDone" value="listDone">
+          ...
+        </li>
+        <li>...</li> -->
+      </ul>
+    </div>
+
 		<!----- メインコンテンツ END ----->
 		
 		<!----- フッター ----->
-		<footer>フッター</footer>
+		<footer></footer>
 		<!----- フッター END ----->
 	</body>
 </html>
