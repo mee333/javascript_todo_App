@@ -1,50 +1,55 @@
-'use strict';
+"use strict";
 
-class TodoThing {
-  constructor(todo, date, checkFlag) {
-    this.todo = todo;
-    this.date = date;
-    this.checkFlag = checkFlag;
-  }
+const todoThing = document.querySelector(".todoThingText");
+const addButton = document.querySelector(".addButton");
+const todoList = document.getElementById("contentsList");
 
-  // Method
-}
+//Event Listener
+addButton.addEventListener("click", addButtonClick);
 
-function click1() {
-  var input_message = document.getElementById("todoThings").value;
+//Function
+function addButtonClick() {
+  var input_message = todoThing.value;
+
   if(input_message){
-    var li = document.createElement('li');
-    var checkBox = document.createElement('input');
-    checkBox.setAttribute('type','checkbox');
+    var newTodo = document.createElement("li");
 
-    checkBox.onclick = function() {
-      //click the checkcox, arrange the character 
-      if(li.style.textDecoration == "line-through"){
-        li.style.textDecoration = "none";
-      }else{
-        li.style.textDecoration = "line-through";
-      }
-    };
+    var checkBox = document.createElement("input");
+    checkBox.setAttribute("type","checkbox");
+    checkBox.addEventListener("click", checkTodo);
 
-    var deleteButton = document.createElement('input');
-    deleteButton.setAttribute('value', "delete");
-    deleteButton.setAttribute('type', 'button')
-
-    //delete the task
-    deleteButton.onclick = function(){
-        const targetTask = deleteButton.closest('li');
-        let targetList = document.getElementById('contentsList');
-        targetList.removeChild(targetTask);
-    };
+    var deleteButton = document.createElement("button");
+    deleteButton.innerText = "delete";
+    deleteButton.addEventListener("click", deleteTodo);
 
     //add li element
-    li.textContent = input_message;
-    li.prepend(checkBox);
-    li.append(deleteButton);
-    
-    document.getElementById('contentsList').appendChild(li);
+    newTodo.textContent = input_message;
+    newTodo.prepend(checkBox);
+    newTodo.append(deleteButton);
+
+    todoList.appendChild(newTodo);
+    //Clear input text
+    todoThing.value = "";
   }
   else{
-    alert('空文字です');
+    alert("You should input some text!");
   }
 }
+
+// delete todo
+function deleteTodo(e){
+  const targetTask = e.currentTarget.parentElement;
+  todoList.removeChild(targetTask);
+};
+
+// check todo
+function checkTodo(e){
+  const targetTask = e.currentTarget.parentElement;
+  
+   //click the checkcox, arrange the character 
+  if(targetTask.style.textDecoration == "line-through"){
+    targetTask.style.textDecoration = "none";
+  }else{
+    targetTask.style.textDecoration = "line-through";
+  }
+};

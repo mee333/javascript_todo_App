@@ -2,44 +2,24 @@
 <html lang="ja">
 	<head>
 		<meta charset="utf-8">
-		<title>Todo App</title>
-		<meta name="description" content="サイトキャプションを入力">
-		<meta name="keywords" content="サイトキーワードを,で区切って入力">
+    <title>Todo App</title>
 		<link rel="stylesheet" href="app.css">
-		
-		<script src="app.js"></script>
 	</head>
 
 	<body>
-		<!----- ヘッダー ----->
-		<header>Todo App</header>
-		<nav></nav>
-		<!----- ヘッダー END ----->
-		
-		<!----- メインコンテンツ ----->
-    <h1></h1>
-    <section>
-      <h2></h2>
-      <p>Add ToDo Thing</p>
-      <form>
-        <input type="text" id="todoThings" name="todoThings">
-        <input type="button" onClick="click1()"　name="addButon" value="Add">
-      </form>
-    </section>
-    <div>
+		<header>
+      <h1>Todo App</h1>
+    </header>
+
+    <form>
+      <input type="text" class="todoThingText">
+      <button type="button" class="addButton">Add</button>
+    </form>
+    <div class="todoListContainer">
       <ul id="contentsList">
-        <!-- <li>
-          <input type="checkbox" id="listDone" name="listDone" value="listDone">
-          ...
-        </li>
-        <li>...</li> -->
       </ul>
     </div>
 
-		<!----- メインコンテンツ END ----->
-		
-		<!----- フッター ----->
-		<footer></footer>
-		<!----- フッター END ----->
+    <script src="app.js"></script>
 	</body>
 </html>
