@@ -4,12 +4,14 @@ const todoThing = document.querySelector(".todoThingText");
 const addButton = document.querySelector(".addButton");
 const todoList = document.getElementById("contentsList");
 const todoDate = document.querySelector('input[type="date"]');
+const clearButton = document.querySelector('.clearButton');
 
 //Event Listener
 document.addEventListener("DOMContentLoaded", function() {
   setToday();
 });
 addButton.addEventListener("click", addButtonClick);
+clearButton.addEventListener("click", clearTodoList);
 
 //Function
 // add todo task
@@ -23,23 +25,24 @@ function addButtonClick() {
     var checkBox = document.createElement("input");
     checkBox.setAttribute("type","checkbox");
     checkBox.addEventListener("click", checkTodo);
-    checkBox.classList.add("mr-2");
+    checkBox.classList.add("todoCheckBox", "mr-2");
 
     var doneDate = document.createElement("label");
     doneDate.innerText = todoDate.value;
-    doneDate.classList.add("deadLineDate","float-right", "mr-2");
+    doneDate.classList.add("deadLineDate", "mr-2");
  
     var deleteButton = document.createElement("button");
     deleteButton.innerHTML = '<i class="far fa-trash-alt fa-fw"></i>';
     deleteButton.addEventListener("click", deleteTodo);
-    deleteButton.classList.add("float-right");
+    deleteButton.classList.add("todoDeleteButton","btn", "btn-primary");
 
     //add li element
     newTodo.classList.add('list-group-item');
     newTodo.textContent = input_message;
     newTodo.prepend(checkBox);
-    newTodo.append(deleteButton);
     newTodo.append(doneDate);
+    newTodo.append(deleteButton);
+    
     
     todoList.appendChild(newTodo);
     //init input 
@@ -76,4 +79,11 @@ function setToday(){
         var mm = ("0"+(date.getMonth()+1)).slice(-2);
         var dd = ("0"+date.getDate()).slice(-2);
   document.querySelector('input[type="date"]').value=yyyy+'-'+mm+'-'+dd;
+}
+
+// clear todoList
+function clearTodoList(){
+  while(todoList.lastChild){
+    todoList.removeChild(todoList.lastChild);
+  }
 }

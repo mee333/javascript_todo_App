@@ -1,3 +1,86 @@
+*{
+  margin :0px;
+  padding: 0px;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  font-family: 'Raleway', sans-serif;
+  font-family: 'Titillium Web', sans-serif;
+
+  background: -moz-linear-gradient(left,#2980b9,#6dd5fa 20%,#ffffff); 
+  background: -webkit-linear-gradient(left,#2980b9,#6dd5fa 40%,#ffffff); 
+  background: linear-gradient(to right,left,#2980b9,#6dd5fa 20%,#ffffff); 
+}
+
+header, h1{
+  color: white;
+  font-size: 40px;
+  margin: 10px;
+  margin-bottom: 30px;
+}
+
+form input, form button{
+  padding: 5px;
+  margin: 2px;
+  margin-top: 10px;
+  margin-bottom: 25px;
+  font-size: 23px;
+}
+
+form button{
+  font-size: 50px;
+}
+
 ul {
   list-style-type: none;
+}
+
+.newTodoList{
+  font-size: 23px;
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.deadLineDate{
+  margin: 0px;
+  margin-right: 5px;
+  flex-grow: 1;
+  text-align: right;
+}
+
+.todoDeleteButton{
+  color: white;
+  border: none;
+  margin-left:auto;
+}
+
+input[type=checkbox] {
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+
+}
+
+.clearButton{
+  font-size: 20px;
+  margin-top: 50px;
+}
+
+@media screen and (max-width:768px) { 
+  /* Medium screen size */
+  form input{
+    padding: 0px;
+    margin: 5px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+  form button{
+    padding: 5px;
+    margin: 2px;
+    margin-top: 0px;
+    margin-bottom: 25px;
+  }
 }
